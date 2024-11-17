@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>适用于Windows的安卓子系统安装</title>
+      <link href="/2024/11/17/%E9%80%82%E7%94%A8%E4%BA%8EWindows%E7%9A%84%E5%AE%89%E5%8D%93%E5%AD%90%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"/>
+      <url>/2024/11/17/%E9%80%82%E7%94%A8%E4%BA%8EWindows%E7%9A%84%E5%AE%89%E5%8D%93%E5%AD%90%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</url>
+      
+        <content type="html"><![CDATA[<p><strong>WSA（适用于Windows的Android™️子系统）</strong>，全称Windows Subsystem for Android，它能够让你在Windows 11系统中安装和使用Android应用程序。</p><p>官方开发人员指南链接：适用于 Android™️ 的 Windows 子系统 | Microsoft Docs（<a href="https://docs.microsoft.com/zh-cn/windows/android/wsa/%EF%BC%89">https://docs.microsoft.com/zh-cn/windows/android/wsa/）</a></p><h2 id="一-安装环境"><a href="#一-安装环境" class="headerlink" title="一. 安装环境"></a><strong>一. 安装环境</strong></h2><h3 id="设备要求"><a href="#设备要求" class="headerlink" title="设备要求"></a>设备要求</h3><p>①确保设备已安装<strong>Windows 11</strong>（Win11的安装请自行<a href="https://cn.bing.com/search?q=Win11%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B">搜索</a>）</p><p>②内存：8 GB (最低) <strong>16 GB</strong> (建议)</p><p>③处理器：Intel Core i3 第 8 代 (最低)&#x2F;AMD Ryzen 3000 (最低) &#x2F;高通 Snapdragon 8c (最低) </p><h3 id="在Windows-11电脑上启用虚拟化"><a href="#在Windows-11电脑上启用虚拟化" class="headerlink" title="在Windows 11电脑上启用虚拟化"></a>在Windows 11电脑上启用虚拟化</h3><p>①打开 <strong>开始</strong>，输入 <strong>Windows 功能</strong>，然后从结果列表中打开 <strong>启用或关闭 Windows 功能</strong></p><p>②在刚刚打开的 <strong>Windows 功能</strong>窗口中，找到 <strong>Hyper-V</strong>、<strong>Windows虚拟机监控程序平台</strong>和 <strong>虚拟机平台</strong>并勾选</p><p>③点击 <strong>确定</strong>。 可能需要重启电脑</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows子系统 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2024/10/20/hello-world/"/>
       <url>/2024/10/20/hello-world/</url>
