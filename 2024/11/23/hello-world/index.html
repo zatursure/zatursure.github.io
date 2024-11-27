@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Hello World | Zatursure的小窝</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/img/favicon.ico"><!-- index.css--><link rel="stylesheet" href="/css/index.css?v=2.1.4"><!-- inject head--><link rel="canonical" href="https://im.zatursure.top/2024/11/23/hello-world/"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"><!-- aplayer--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"><!-- swiper--><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="Zatursure的小窝"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/img/favicon.ico"><link rel="apple-touch-icon" href="/img/favicon.ico" sizes="180x180"><script>console.log(' %c Solitude %c ' + '2.1.4' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><script>let mdate = "7-7,9-18,12-13";
+mdate = (mdate.split(","));
+let ndate = new Date();
+for (let i of mdate) {
+    if (i === (ndate.getMonth()+1) + "-" + (ndate.getDate())) {
+        document.documentElement.classList.add('memorial');
+    }
+}
+</script><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
+
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
+
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+
+                if (name && keyObj[name]) return
+
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+          },
+        }
+    })()</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: undefined,
+    localsearch: undefined,
+    runtime: '2024-04-20 00:00:00',
+    lazyload: {
+        enable: false,
+        error: '/img/error_load.avif'
+    },
+    copyright: {"limit":1,"author":"作者: Zatursure","link":"链接: ","source":"来源: Zatursure的小窝","info":"著作权归作者所有。 商业转载请联系作者获得授权，非商业转载请注明出处。"},
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: false,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可"},
+    aside: {
+        sayhello: {
+            morning: "✨ 早上好，新的一天开始了",
+            noon: "中午饭时间",
+            afternoon: "下午茶时间 🍵",
+            night: "不要熬夜哦",
+            goodnight: "晚安，早点休息",
+        },
+        sayhello2: ["你可以的","相信你可以的","你一定可以的"],
+        sayhello3: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: true
+    },
+    comment: false,
+    lightbox: 'null',
+    post_ai: false,
+    right_menu: {"mode":{"dark":"深色模式","light":"浅色模式"},"img_error":"此图片无法复制与下载","music":{"start":"播放音乐","stop":"暂停音乐"},"translate":true,"ctrlOriginalMenu":"按住Ctrl+右键可打开浏览器右键菜单"},
+    translate: {"translateDelay":0,"defaultEncoding":2},
+    lure: {"jump":"你不要我了吗。。。","back":"ヾ(≧∇≦*)ゝ欢迎肥来~"},
+    expire: {"time":100,"position":"top","text_prev":"文章已经有 ","text_next":" 天的历史了，可能无法使用（不怪我哈）"},
+};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
+    is_post: true,
+    is_page: false,
+    is_home: false,
+    page: '',
+    toc: true,
+    comment: false,
+    ai_text: false,
+    color: false,
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body id="body"><!-- universe--><canvas id="universe"></canvas><!-- background img--><!-- loading--><!-- console--><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fa-solid fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>全部文章</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类列表</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签列表</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"><i class="solitude  fas fa-train"></i><span>开往</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="solitude  fas fa-music"></i><span>音乐馆</span></a></li><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于本站</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="card-tag-cloud"></div></div><span class="sidebar-menu-item-title">网站信息</span><div class="webinfo"><div class="webinfo-item"><div class="webinfo-item-title"><i class="item-icon solitude fa-solid fa-file-word"></i><div class="item-name">全站字数 :</div></div><div class="item-count">457</div></div></div></div></div><!-- keyboard--><!-- righhtside--><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a id="site-name" href="/" title="返回博客主页"><span class="title">Zatursure的小窝</span><i class="solitude fa-solid fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">Hello World</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>全部文章</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类列表</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签列表</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li><li><a class="site-page child" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html"><i class="solitude  fas fa-train"></i><span>开往</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="solitude  fas fa-music"></i><span>音乐馆</span></a></li><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于本站</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机一篇文章" href="javascript:void(0);"><i class="solitude fa-solid fa-dice-d6"></i></a></div><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude fa-solid fa-arrow-up"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fa-solid fa-bars"></i></a></div></div></div></nav><div class="coverdiv" id="coverdiv"><img class="nolazyload" id="post-cover" src="/img/default.avif" alt="Hello World"></div><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="该文章为原创文章，注意版权协议">原创</a><div class="tag_share"><div class="post-meta__tag-list"></div></div></div></div><h1 class="post-title">Hello World</h1><div id="post-meta"><div class="meta-secondline"><span class="post-meta-date" title="发布于 2024-11-23 11:57:38"><i class="post-meta-icon solitude fas fa-calendar-days"></i><time datetime="2024-11-23T03:57:38.870Z">2024-11-23T03:57:38.870Z</time></span><span class="post-meta-date" title="最后更新于 2024-10-20 20:51:29"><i class="post-meta-icon solitude fa-solid fa-arrows-rotate"></i><time datetime="2024-10-20T12:51:29.052Z">2024-10-20T12:51:29.052Z</time></span><span class="post-meta-wordcount"><i class="post-meta-icon solitude fa-solid fa-file-word" title="文章字数"></i><span class="word-count">75</span><span class="post-meta-separator"></span><i class="post-meta-icon solitude fa-solid fa-clock" title="阅读耗时"></i><span>1 min</span></span><span class="post-meta-position" title="作者IP归属地为深圳"><i class="post-meta-icon solitude fas fa-location-dot"></i><span>深圳</span></span><a class="post-meta-pv" href="/2024/11/23/hello-world/" title="文章热度"><i class="post-meta-icon solitude fa-solid fa-fire-flame-curved"></i></a></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author_group"><a class="post-copyright__author_img" href="/about/"><img class="post-copyright__author_img_front" src="/img/avatar.jpg"></a><div class="post-copyright__author_name">Zatursure的小窝</div><div class="post-copyright__author_desc"></div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" onclick="RemoveRewardMask()"></div></div></div><div class="social-share"><a class="social-share-ico icon-qq" target="_blank" rel="noopener" href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fim.zatursure.top%2F2024%2F11%2F23%2Fhello-world%2F&amp;title=Hello%20World&amp;desc=undefined&amp;summary=undefined&amp;site=Hello%20World&amp;pics=%2Fimg%2Fdefault.avif" title="分享到QQ"><i class="solitude fab fa-qq"></i></a><a class="social-share-ico icon-weibo" target="_blank" rel="noopener" href="http://service.weibo.com/share/share.php?url=https%3A%2F%2Fim.zatursure.top%2F2024%2F11%2F23%2Fhello-world%2F&amp;title=Hello%20World&amp;pic=%2Fimg%2Fdefault.avif" title="分享到微博"><i class="solitude fab fa-weibo"></i></a><a class="social-share-ico icon-twitter" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fim.zatursure.top%2F2024%2F11%2F23%2Fhello-world%2F&amp;text=Hello%20World" title="分享到Twitter"><i class="solitude fab fa-twitter"></i></a><a class="social-share-ico icon-facebook" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fim.zatursure.top%2F2024%2F11%2F23%2Fhello-world%2F" title="分享到Facebook"><i class="solitude fab fa-facebook"></i></a><a class="social-share-ico icon-telegram" target="_blank" rel="noopener" href="https://t.me/share/url?url=https%3A%2F%2Fim.zatursure.top%2F2024%2F11%2F23%2Fhello-world%2F&amp;text=Hello%20World" title="分享到Telegram"><i class="solitude fab fa-telegram"></i></a><div class="social-share-ico icon-link" onclick="utils.copy(&quot;https://im.zatursure.top/2024/11/23/hello-world/&quot;)" title="复制文章链接"><i class="solitude fas fa-link"></i></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本文是原创文章，采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>协议，完整转载请注明来自<a href="/">Zatursure的小窝</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"></div></div></div><nav class="needEndHide pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/11/17/%E9%80%82%E7%94%A8%E4%BA%8EWindows%E7%9A%84%E5%AE%89%E5%8D%93%E5%AD%90%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">适用于Windows的安卓子系统安装</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-bg-top"><div class="is-center"><div class="author-info__top-group"><div class="author-info__sayhi" id="author-info__sayhi" onclick="sco.changeSayHelloText()">sayhello.morning</div></div></div></div><a class="card-info-avatar" href="/about/" title="头像"><div class="avatar-img"><img src="/img/avatar.jpg" alt="头像"></div></a><div class="card-info__desc_group"><div class="author-info__name">Zatursure</div><div class="author-info__desc"></div><div class="card-info__data is-center"><a href="/archives/" title="累计文章数:2"><div class="length-num">2</div><div class="headline">文章</div></a><a href="/categories/" title="分类总数:1"><div class="length-num">1</div><div class="headline">分类</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" target="_blank" rel="noopener" href="https://github.com/zatursure" title="Github"><i class="solitude  fab fa-github"></i></a><a class="social-icon" target="_blank" rel="noopener" href="https://space.bilibili.com/3546659678063525" title="Bilibili"><i class="solitude  fab fa-bilibili"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude fa-solid fa-bars"></i><span>文章目录</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fa-solid fa-map"></i><span>最近发布</span></div><div class="aside-list"><a class="aside-list-item" href="/2024/11/23/hello-world/" title="Hello World"><div class="thumbnail"><img alt="Hello World" src="/img/default.avif"></div><div class="content"><span class="title" href="/2024/11/23/hello-world/" title="Hello World">Hello World</span></div></a><a class="aside-list-item" href="/2024/11/17/%E9%80%82%E7%94%A8%E4%BA%8EWindows%E7%9A%84%E5%AE%89%E5%8D%93%E5%AD%90%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" title="适用于Windows的安卓子系统安装"><div class="thumbnail"><img alt="适用于Windows的安卓子系统安装" src="/img/default.avif"></div><div class="content"><span class="title" href="/2024/11/17/%E9%80%82%E7%94%A8%E4%BA%8EWindows%E7%9A%84%E5%AE%89%E5%8D%93%E5%AD%90%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" title="适用于Windows的安卓子系统安装">适用于Windows的安卓子系统安装</span><span class="article-recent_post_categories" href="/2024/11/17/%E9%80%82%E7%94%A8%E4%BA%8EWindows%E7%9A%84%E5%AE%89%E5%8D%93%E5%AD%90%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/">Windows子系统</span></div></a></div></div></div></div></main><footer id="footer"><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2024 By&nbsp;<a class="footer-bar-link" href="/">Zatursure</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20240337" alt="萌ICP备20240337号">萌ICP备20240337号</a></div></div></div></footer></div><!-- right_menu--><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="solitude fa-solid fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="solitude fa-solid fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="solitude fa-solid fa-arrows-rotate"></i></div><div class="rightMenu-item" id="menu-top"><i class="solitude fa-solid fa-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="solitude fa-solid fa-clone"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="solitude fa-solid fa-clipboard"></i><span>粘贴文本</span></div><div class="rightMenu-item" id="menu-newwindow"><i class="solitude fa-regular fa-window-maximize"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="solitude fa-solid fa-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="solitude fa-solid fa-clone"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="solitude fa-solid fa-cloud-arrow-down"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="solitude fa-solid fa-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="solitude fa-solid fa-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="solitude fa-solid fa-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="solitude fa-solid fa-clone"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-randomPost" onclick="toRandomPost()||rm.hideRightMenu()"><i class="solitude fas fa-tower-broadcast"></i><span>随机文章</span></div><div class="rightMenu-item" onclick="pjax.loadUrl('/categories/')||rm.hideRightMenu()"><i class="solitude fas fa-clone"></i><span>全部分类</span></div><div class="rightMenu-item" onclick="pjax.loadUrl('/tags/')||rm.hideRightMenu()"><i class="solitude fas fa-tags"></i><span>全部标签</span></div><div class="rightMenu-item" onclick="pjax.loadUrl('/about/')||rm.hideRightMenu()"><i class="solitude fas fa-user"></i><span>关于本站</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-darkmode" onclick="sco.switchDarkMode()"><i class="solitude fa-solid fa-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></div><div class="rightMenu-item" id="menu-translate"><i class="solitude fa-solid fa-language"></i><span>轉為繁體</span></div></div></div><div id="rightmenu-mask"></div><!-- inject body--><div><script src="/js/utils.js?v=2.1.4"></script><script src="/js/main.js?v=2.1.4"></script><script src="/js/third_party/waterfall.min.js?v=2.1.4"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pjax/0.2.8/pjax.min.js"></script><script src="/js/third_party/universe.min.js?v=2.1.4"></script><script>dark()
+</script><script src="/js/tw_cn.js?v=2.1.4"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><script>var meting_api = 'https://api.obdo.cc/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r';</script><script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/meting/2.0.1/Meting.min.js"></script><script>const coverColorConfig = {
+  time: 43200000
+}</script><script src="/js/covercolor/ave.js?v=2.1.4"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js"></script><script src="/js/right_menu.js?v=2.1.4"></script><div class="js-pjax"></div></div><!-- pjax--><script>const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: ['title','#body-wrap','#site-config','meta[name="description"]','.js-pjax','meta[property^="og:"]','#config-diff', '.rs_show', '.rs_hide'],
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+})
+
+document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+})
+
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- google adsense--><!-- search--><!-- Tianli-Talk--><!-- music--><div class="needEndHide" id="nav-music"><div id="nav-music-hoverTips" onclick="sco.musicToggle()">音乐已暂停</div><meting-js id="12660972277" server="netease" type="playlist" mutex="true" preload="none" theme="var(--efu-main)" data-lrctype="0" order="random" volume="0.8"></meting-js></div></body></html><script>const posts=["2024/11/23/hello-world/","2024/11/17/适用于Windows的安卓子系统安装/"];function toRandomPost(){ pjax.loadUrl(GLOBAL_CONFIG.root+posts[Math.floor(Math.random()*posts.length)]); }</script>
