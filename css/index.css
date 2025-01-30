@@ -3635,14 +3635,14 @@ span.tags-punctuation i {
   filter: alpha(opacity=20);
   width: 100%;
   height: 100%;
-  background-image: url("");
+  background-image: url("/img/background.jpeg");
   background-size: cover;
   background-position: center;
   pointer-events: none;
   background-repeat: no-repeat;
 }
 [data-theme=dark] #global_bg {
-  background-image: url("https://r2.oss.zatursure.top/background.jpeg");
+  background-image: url("/img/background.jpeg");
 }
 #article-container {
   overflow-wrap: break-word;
@@ -10382,6 +10382,29 @@ span.tags-punctuation {
   -ms-flex-order: 1;
   -webkit-order: 1;
   order: 1;
+}
+.hot-tip {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  color: var(--efu-red);
+  font-size: 0.5rem;
+  position: relative;
+  margin-right: 8px;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  gap: 1px;
+}
+.hot-tip i {
+  font-size: 10px;
+  margin-right: 2px;
 }
 #category #category-bar {
   padding: 0;
