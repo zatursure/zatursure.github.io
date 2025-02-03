@@ -653,10 +653,8 @@
     <content><![CDATA[<blockquote>
 <p>都2025年了,还不会<strong>自己</strong>开Minecraft服务器?</p>
 <p>别担心!这篇教程<strong>手把手</strong>教你如何开服!</p>
-<p>此篇教程包含<strong>我自己的观点</strong>,若有不对请<strong>各位大佬</strong>指出 !我会进行修改!</p>
-<p><del>抵制圈钱跑路快餐服,从我做起</del></p>
 </blockquote>
-<h2 id="选择合适的环境"><a href="#选择合适的环境" class="headerlink" title="选择合适的环境"></a>选择合适的环境</h2><p>你需要一台<strong>可以从公网访问</strong>的机器(家用电脑\服务器等,但都要支持从外部直接访问)</p>
+<h2 id="合适的环境"><a href="#合适的环境" class="headerlink" title="合适的环境"></a>合适的环境</h2><p>你需要一台<strong>可以从公网访问</strong>的机器(家用电脑\服务器等,但都要支持从外部直接访问)</p>
 <p>家用电脑<strong>一般没有公网ip</strong>,但不排除本地运营商给你配备了<strong>动态</strong>公网ip.而购买的<strong>云服务器</strong>基本配备公网ip</p>
 <blockquote>
 <p>如何查看自己是否拥有公网ip：</p>
@@ -664,8 +662,8 @@
 <p>再去<a href="https://ipw.cn/">IPW</a>查询自己的IP,如果两个一致,那就是拥有<strong>公网IP</strong>,可以直接从外部连接到服务器</p>
 <p>如果不一样也不要着急,这并不代表你开不了服务器,可以选择购买<strong>VPS</strong>或者根据下文教程进行<strong>端口穿透</strong></p>
 </blockquote>
-<h3 id="你所使用的机器性能要足够"><a href="#你所使用的机器性能要足够" class="headerlink" title="你所使用的机器性能要足够"></a>你所使用的机器性能要足够</h3><p>一般来说开原版服或者轻量插件服,并且人数不多,最好在CPU2核,内存4G以上.大型插件服和模组服建议4核8G起步(仅仅是起步!特别是模组服真的很吃配置!)</p>
-<p>当然,内存频率越高,越大越好;CPU频率,IPC值和单核性能(特别是模组服)越高越好;硬盘读取速度越快越好,推荐固态硬盘.(别问我显卡了!开服务器要啥显卡!)</p>
+<h3 id="性能要足够"><a href="#性能要足够" class="headerlink" title="性能要足够"></a>性能要足够</h3><p>一般来说开原版服或者轻量插件服,并且人数不多,最好在CPU2核,内存4G以上.大型插件服和模组服建议4核8G起步(仅仅是起步!特别是模组服真的很吃配置!)</p>
+<p><a href="https://blog.csdn.net/wads23456/article/details/114579366">CPU频率</a>,<a href="https://www.zhihu.com/question/525815599">IPC值</a>和单核性能(特别是模组服)越高越好，硬盘读取速度越快越好推荐固态硬盘 <del>耐摔</del></p>
 <h3 id="系统的选择"><a href="#系统的选择" class="headerlink" title="系统的选择"></a>系统的选择</h3><p>一般使用Windows或者Linux(新手不推荐,<strong>本教程用Windows做示范</strong>)</p>
 <p><strong>大型服务器</strong>使用Linux要比Windows好(因为占用是真的低,Windows动不动吃1-2G)</p>
 <p><strong>Windows系统最好是选择<a href="https://www.microsoft.com/zh-cn/windows-server">WindowsServer</a>,占用要比一般的Windows小</strong></p>
@@ -681,31 +679,29 @@
 <p>就连基岩版也可以用geyser在插件端里面游玩!虽然并不是很好用)</p>
 <p><strong>推荐新手使用的核心有这几种:</strong></p>
 <ul>
-<li><strong>1.Vanilla端</strong></li>
+<li><strong>1.<a href="https://www.minecraft.net/zh-hans/download/server/">Vanilla端</a></strong></li>
 </ul>
 <p>这是MOJANG官方发布的原版服务端,和原版游戏一模一样,但是不能加装模组和插件</p>
-<p>下载:<a href="https://www.minecraft.net/zh-hans/download/server/">https://www.minecraft.net/zh-hans/download/server/</a></p>
 <ul>
-<li><strong>2.Paper端</strong></li>
+<li><strong>2.<a href="https://papermc.io/downloads">Paper端</a></strong></li>
 </ul>
-<p>这是spigot端的下游服务端,优化较好(相比spigot优化较为激进),但是修复了原版不少BUG特性,可以装插件(说是有极少数插件不兼容,但是我开了两年服到现在还  没见过不兼容的插件),不能装模组</p>
-<p>下载:<a href="https://papermc.io/downloads">https://papermc.io/downloads</a></p>
+<p>这是spigot端的下游服务端,优化较好(相比Spigot优化较为激进),但是修复了原版不少BUG特性,可以装插件(说是有极少数插件不兼容,但是我开了两年服到现在还  没见过不兼容的插件),不能装模组</p>
 <ul>
 <li><strong><del>3.Vanilla+Forge&#x2F;Fabic,经典模组端</del></strong></li>
 </ul>
 <p><del>新手上手难度较大(但是是最适合新手的模组端),只能装模组,不能装插件,需要特定客户端登入</del></p>
 <ul>
-<li><strong>4.CatServer端</strong></li>
+<li><strong>4.<a href="https://catmc.org/">CatServer端</a></strong></li>
 </ul>
-<p>CatServer并<strong>不推荐新手使用</strong>,只是让你们知道有这种既能装模组也能装插件的端而已,不提供下载地址</p>
-<p>这是国内大佬开发的Bukkit+forge服务端,支持插件和模组同时使用,但是兼容性较差(相比paper和vanillaforge),支持的版本较少(1.12.2,1.16.5,1.18.2)</p>
+<p><strong>CatServer</strong>是一款<strong>高性能</strong>且<strong>高度兼容</strong>的服务器核心，它集成了<strong>Forge</strong>、<strong>Bukkit</strong>和<strong>Spigot</strong>的功能，支持<strong>1.12.2</strong>、<strong>1.16.5</strong>以及<strong>1.18.2</strong>等游戏版本。这个项目由<strong>Luohuayu</strong>发起，采用GPL-3.0许可证进行分发，主要编程语言为<strong>Java</strong>，适合想要<strong>自定义服务器环境</strong>、<strong>添加MOD和插件</strong>的玩家和技术爱好者</p>
+<p><strong>不建议新手使用！！！</strong></p>
 <p><strong>但是本身是一个很厉害的端!</strong></p>
 <blockquote>
-<p>推荐一个优化很好的端: <a href="purpurmc.org">Purpur端</a></p>
-<p>在使用上可以直接替代Paper端(是Paper的优化版)</p>
+<p>推荐一个很好的端: <a href="https://purpurmc.org/">Purpur端</a></p>
+<p>他是Paper端的优化版，主要差别在<strong>性能</strong>和<strong>占用</strong>两方面上</p>
 <p>对性能有较大的提升</p>
 </blockquote>
-<h2 id="原神启动-开服"><a href="#原神启动-开服" class="headerlink" title="原神启动!!! 开服!!!"></a><del>原神启动!!!</del> 开服!!!</h2><p><strong>这一步</strong>非常简单,只要把你选好的核心<strong>下载下来</strong>,然后放到一个空的文件夹里面(路径尽量不包含中文),创建好启动脚本即可.</p>
+<h2 id="开服"><a href="#开服" class="headerlink" title="开服!!!"></a>开服!!!</h2><p><strong>这一步</strong>非常简单,只要把你选好的核心<strong>下载下来</strong>,然后放到一个空的文件夹里面,创建好启动脚本即可.</p>
 <p>首先新建一个空的文件夹,名字随便起</p>
 <p>然后把下载的服务端核心丢进去</p>
 <p>右键新建一个文本文档,双击打开,里面像这样编辑</p>
@@ -719,7 +715,7 @@
 <p>双击.bat文件,你的服务器就开好了!</p>
 <p><strong>这时候你会发现,服务器打开了但是没有完全打开</strong></p>
 <p>这就需要你回到服务器的根目录(也就是你创建的那个放服务器核心的文件夹),发现新生成了一个叫eula.txt的文件</p>
-<p>然后将其中的 eula&#x3D;false 改为 eula&#x3D;true,<a href="https://www.minecraft.net/zh-hans/eula"><strong>这代表你同意了Mojang的协议</strong></a></p>
+<p>然后将其中的 eula&#x3D;<strong>false</strong> 改为 eula&#x3D;<strong>true</strong>,<strong>这代表你同意了<a href="https://www.minecraft.net/zh-hans/eula">Mojang的协议</a></strong></p>
 <p>保存并关闭,再次双击打开.bat文件,你的服务器就可以正常开启啦!</p>
 <p>想停止的话在控制台输入stop就可以啦!</p>
 ]]></content>
