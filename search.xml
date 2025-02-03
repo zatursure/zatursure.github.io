@@ -625,6 +625,109 @@
 ]]></content>
   </entry>
   <entry>
+    <title>适用于Windows的安卓子系统安装</title>
+    <url>/2024/11/17/%E9%80%82%E7%94%A8%E4%BA%8EWindows%E7%9A%84%E5%AE%89%E5%8D%93%E5%AD%90%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<p><strong>WSA（适用于Windows的Android™️子系统）</strong>，全称Windows Subsystem for Android，它能够让你在Windows 11系统中安装和使用Android应用程序。</p>
+<p>官方开发人员指南链接：适用于 Android™️ 的 Windows 子系统 | Microsoft Docs（<a href="https://docs.microsoft.com/zh-cn/windows/android/wsa/%EF%BC%89">https://docs.microsoft.com/zh-cn/windows/android/wsa/）</a></p>
+<h2 id="一-安装环境"><a href="#一-安装环境" class="headerlink" title="一. 安装环境"></a>一. 安装环境</h2><h3 id="设备要求"><a href="#设备要求" class="headerlink" title="设备要求"></a>设备要求</h3><p>确保设备已安装<strong>Windows 11</strong>（Win11的安装请自行<a href="https://cn.bing.com/search?q=Win11%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B">搜索</a>）</p>
+<p>内存：8 GB (最低) <strong>16 GB</strong> (建议)</p>
+<p>处理器：Intel Core i3 第 8 代 (最低)&#x2F;AMD Ryzen 3000 (最低) &#x2F;高通 Snapdragon 8c (最低) </p>
+<h3 id="在Windows-11电脑上启用虚拟化"><a href="#在Windows-11电脑上启用虚拟化" class="headerlink" title="在Windows 11电脑上启用虚拟化"></a>在Windows 11电脑上启用虚拟化</h3><p>打开 <strong>开始</strong>，输入 <strong>Windows 功能</strong>，然后从结果列表中打开 <strong>启用或关闭 Windows 功能</strong></p>
+<p>在刚刚打开的 <strong>Windows 功能</strong>窗口中，找到 <strong>Hyper-V</strong>、<strong>Windows虚拟机监控程序平台</strong>和 <strong>虚拟机平台</strong>并勾选</p>
+<p>点击 <strong>确定</strong>。 可能需要重启电脑</p>
+<h2 id="二-安装并配置WSA"><a href="#二-安装并配置WSA" class="headerlink" title="二.安装并配置WSA"></a>二.安装并配置WSA</h2><h3 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h3><p>由于中国用户无法在微软应用商店安装，所以需要下载安装包进行安装</p>
+<p>访问<a href="https://store.rg-adguard.net/">Microsoft Store 的在线链接生成器</a>，获取方式选择ProductId，通道选择Fast，搜索框中填入9P3395VX91NR</p>
+<p>在下面加载出的文件列表中, 找到名称为如下格式的文件, 下载版本最新的那个, 大约 1.37GB</p>
+<p><strong>MicrosoftCorporationII.WindowsSubsystemForAndroid_x.x.x.x_neutral_~_8wekyb3d8bbwe.msixbundle</strong></p>
+<p>等待浏览器下载完成后安装</p>
+<h3 id="使用WSAToolBox管理WSA"><a href="#使用WSAToolBox管理WSA" class="headerlink" title="使用WSAToolBox管理WSA"></a>使用WSAToolBox管理WSA</h3><p>使用微软应用商店下载WSAToolBox —-&gt; <a href="https://apps.microsoft.com/detail/9ppsp2mkvtgt?ocid=libraryshare&hl=zh-cn&gl=US">传送门</a></p>
+<p>工具箱中的内容自己摸索一下，然后。。。这篇文章就结束啦</p>
+]]></content>
+      <categories>
+        <category>Windows子系统</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>教你搭建自己的Minecraft(Java版)服务器</title>
+    <url>/2025/01/31/%E6%95%99%E4%BD%A0%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84Minecraft-Java%E7%89%88-%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    <content><![CDATA[<blockquote>
+<p>都2025年了,还不会<strong>自己</strong>开Minecraft服务器?</p>
+<p>别担心!这篇教程<strong>手把手</strong>教你如何开服!</p>
+<p>此篇教程包含<strong>我自己的观点</strong>,若有不对请<strong>各位大佬</strong>指出 !我会进行修改!</p>
+<p><del>抵制圈钱跑路快餐服,从我做起</del></p>
+</blockquote>
+<h2 id="选择合适的环境"><a href="#选择合适的环境" class="headerlink" title="选择合适的环境"></a>选择合适的环境</h2><p>你需要一台<strong>可以从公网访问</strong>的机器(家用电脑\服务器等,但都要支持从外部直接访问)</p>
+<p>家用电脑<strong>一般没有公网ip</strong>,但不排除本地运营商给你配备了<strong>动态</strong>公网ip.而购买的<strong>云服务器</strong>基本配备公网ip</p>
+<blockquote>
+<p>如何查看自己是否拥有公网ip：</p>
+<p>首先你需要登录到路由器或者光猫后台,在运行界面找到<strong>WAN IP</strong></p>
+<p>再去<a href="https://ipw.cn/">IPW</a>查询自己的IP,如果两个一致,那就是拥有<strong>公网IP</strong>,可以直接从外部连接到服务器</p>
+<p>如果不一样也不要着急,这并不代表你开不了服务器,可以选择购买<strong>VPS</strong>或者根据下文教程进行<strong>端口穿透</strong></p>
+</blockquote>
+<h3 id="你所使用的机器性能要足够"><a href="#你所使用的机器性能要足够" class="headerlink" title="你所使用的机器性能要足够"></a>你所使用的机器性能要足够</h3><p>一般来说开原版服或者轻量插件服,并且人数不多,最好在CPU2核,内存4G以上.大型插件服和模组服建议4核8G起步(仅仅是起步!特别是模组服真的很吃配置!)</p>
+<p>当然,内存频率越高,越大越好;CPU频率,IPC值和单核性能(特别是模组服)越高越好;硬盘读取速度越快越好,推荐固态硬盘.(别问我显卡了!开服务器要啥显卡!)</p>
+<h3 id="系统的选择"><a href="#系统的选择" class="headerlink" title="系统的选择"></a>系统的选择</h3><p>一般使用Windows或者Linux(新手不推荐,<strong>本教程用Windows做示范</strong>)</p>
+<p><strong>大型服务器</strong>使用Linux要比Windows好(因为占用是真的低,Windows动不动吃1-2G)</p>
+<p><strong>Windows系统最好是选择<a href="https://www.microsoft.com/zh-cn/windows-server">WindowsServer</a>,占用要比一般的Windows小</strong></p>
+<p>1.7- 推荐 Java8</p>
+<p>1.8+ 推荐 Java8&#x2F;11</p>
+<p>1.16+ 推荐 Java11&#x2F;16</p>
+<p>1.18+ 推荐 Java17</p>
+<p><strong>如果你的机器已经符合这些要求,就可以进行下一步辣!</strong></p>
+<h2 id="选择合适的服务端"><a href="#选择合适的服务端" class="headerlink" title="选择合适的服务端"></a>选择合适的服务端</h2><p><strong>现在的服务端多种多样,新手还是推荐从官方原版端或Paper端中选择</strong></p>
+<p><strong>不建议也不提倡新手开MOD服,原版服或者插件服真的要比MOD服流畅很多很多,而且开服成本较低,</strong></p>
+<p>服务器核心大概分为以下几类: <strong>原版端</strong>,<strong>插件端</strong>,<strong>模组端</strong></p>
+<p>模组端需要用<strong>特殊的客户端登入</strong>(装有相同MOD),而原版端和插件端<strong>任意同版本客户端都可登入</strong>(在插件端里甚至是不同版本!有跨版本插件ViaVision可以用!</p>
+<p>就连基岩版也可以用geyser在插件端里面游玩!虽然并不是很好用)</p>
+<p><strong>推荐新手使用的核心有这几种:</strong></p>
+<ul>
+<li><strong>1.Vanilla端</strong></li>
+</ul>
+<p>这是MOJANG官方发布的原版服务端,和原版游戏一模一样,但是不能加装模组和插件</p>
+<p>下载:<a href="https://www.minecraft.net/zh-hans/download/server/">https://www.minecraft.net/zh-hans/download/server/</a></p>
+<ul>
+<li><strong>2.Paper端</strong></li>
+</ul>
+<p>这是spigot端的下游服务端,优化较好(相比spigot优化较为激进),但是修复了原版不少BUG特性,可以装插件(说是有极少数插件不兼容,但是我开了两年服到现在还  没见过不兼容的插件),不能装模组</p>
+<p>下载:<a href="https://papermc.io/downloads">https://papermc.io/downloads</a></p>
+<ul>
+<li><strong><del>3.Vanilla+Forge&#x2F;Fabic,经典模组端</del></strong></li>
+</ul>
+<p><del>新手上手难度较大(但是是最适合新手的模组端),只能装模组,不能装插件,需要特定客户端登入</del></p>
+<ul>
+<li><strong>4.CatServer端</strong></li>
+</ul>
+<p>CatServer并<strong>不推荐新手使用</strong>,只是让你们知道有这种既能装模组也能装插件的端而已,不提供下载地址</p>
+<p>这是国内大佬开发的Bukkit+forge服务端,支持插件和模组同时使用,但是兼容性较差(相比paper和vanillaforge),支持的版本较少(1.12.2,1.16.5,1.18.2)</p>
+<p><strong>但是本身是一个很厉害的端!</strong></p>
+<blockquote>
+<p>推荐一个优化很好的端: <a href="purpurmc.org">Purpur端</a></p>
+<p>在使用上可以直接替代Paper端(是Paper的优化版)</p>
+<p>对性能有较大的提升</p>
+</blockquote>
+<h2 id="原神启动-开服"><a href="#原神启动-开服" class="headerlink" title="原神启动!!! 开服!!!"></a><del>原神启动!!!</del> 开服!!!</h2><p><strong>这一步</strong>非常简单,只要把你选好的核心<strong>下载下来</strong>,然后放到一个空的文件夹里面(路径尽量不包含中文),创建好启动脚本即可.</p>
+<p>首先新建一个空的文件夹,名字随便起</p>
+<p>然后把下载的服务端核心丢进去</p>
+<p>右键新建一个文本文档,双击打开,里面像这样编辑</p>
+<hr>
+<p><code>@ECHO OFF</code></p>
+<p><code>java -Xmx1G -Xms2G -jar 服务端核心名称.jar</code></p>
+<p><code>pause</code></p>
+<hr>
+<p>记得在查看文件的时候一定要勾选上文件扩展名,方便后续操作.(如果有不会的可以自行搜索,这个每个版本的Windows开启位置都不一样)</p>
+<p>最后<strong>保存(Ctrl+S)<strong>然后</strong>把.txt文件修改为.bat文件</strong>就好啦</p>
+<p>双击.bat文件,你的服务器就开好了!</p>
+<p><strong>这时候你会发现,服务器打开了但是没有完全打开</strong></p>
+<p>这就需要你回到服务器的根目录(也就是你创建的那个放服务器核心的文件夹),发现新生成了一个叫eula.txt的文件</p>
+<p>然后将其中的 eula&#x3D;false 改为 eula&#x3D;true,<a href="https://www.minecraft.net/zh-hans/eula"><strong>这代表你同意了Mojang的协议</strong></a></p>
+<p>保存并关闭,再次双击打开.bat文件,你的服务器就可以正常开启啦!</p>
+<p>想停止的话在控制台输入stop就可以啦!</p>
+]]></content>
+      <categories>
+        <category>Minecraft</category>
+      </categories>
+  </entry>
+  <entry>
     <title>关于 MCBBS 永久关闭：我们永远失去了一个不可替代的社区</title>
     <url>/2025/01/15/%E5%85%B3%E4%BA%8E-MCBBS-%E6%B0%B8%E4%B9%85%E5%85%B3%E9%97%AD%EF%BC%9A%E6%88%91%E4%BB%AC%E6%B0%B8%E8%BF%9C%E5%A4%B1%E5%8E%BB%E4%BA%86%E4%B8%80%E4%B8%AA%E4%B8%8D%E5%8F%AF%E6%9B%BF%E4%BB%A3%E7%9A%84%E7%A4%BE%E5%8C%BA/</url>
     <content><![CDATA[<blockquote>
@@ -712,29 +815,6 @@
 ]]></content>
       <categories>
         <category>Minecraft</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>适用于Windows的安卓子系统安装</title>
-    <url>/2024/11/17/%E9%80%82%E7%94%A8%E4%BA%8EWindows%E7%9A%84%E5%AE%89%E5%8D%93%E5%AD%90%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<p><strong>WSA（适用于Windows的Android™️子系统）</strong>，全称Windows Subsystem for Android，它能够让你在Windows 11系统中安装和使用Android应用程序。</p>
-<p>官方开发人员指南链接：适用于 Android™️ 的 Windows 子系统 | Microsoft Docs（<a href="https://docs.microsoft.com/zh-cn/windows/android/wsa/%EF%BC%89">https://docs.microsoft.com/zh-cn/windows/android/wsa/）</a></p>
-<h2 id="一-安装环境"><a href="#一-安装环境" class="headerlink" title="一. 安装环境"></a>一. 安装环境</h2><h3 id="设备要求"><a href="#设备要求" class="headerlink" title="设备要求"></a>设备要求</h3><p>确保设备已安装<strong>Windows 11</strong>（Win11的安装请自行<a href="https://cn.bing.com/search?q=Win11%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B">搜索</a>）</p>
-<p>内存：8 GB (最低) <strong>16 GB</strong> (建议)</p>
-<p>处理器：Intel Core i3 第 8 代 (最低)&#x2F;AMD Ryzen 3000 (最低) &#x2F;高通 Snapdragon 8c (最低) </p>
-<h3 id="在Windows-11电脑上启用虚拟化"><a href="#在Windows-11电脑上启用虚拟化" class="headerlink" title="在Windows 11电脑上启用虚拟化"></a>在Windows 11电脑上启用虚拟化</h3><p>打开 <strong>开始</strong>，输入 <strong>Windows 功能</strong>，然后从结果列表中打开 <strong>启用或关闭 Windows 功能</strong></p>
-<p>在刚刚打开的 <strong>Windows 功能</strong>窗口中，找到 <strong>Hyper-V</strong>、<strong>Windows虚拟机监控程序平台</strong>和 <strong>虚拟机平台</strong>并勾选</p>
-<p>点击 <strong>确定</strong>。 可能需要重启电脑</p>
-<h2 id="二-安装并配置WSA"><a href="#二-安装并配置WSA" class="headerlink" title="二.安装并配置WSA"></a>二.安装并配置WSA</h2><h3 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h3><p>由于中国用户无法在微软应用商店安装，所以需要下载安装包进行安装</p>
-<p>访问<a href="https://store.rg-adguard.net/">Microsoft Store 的在线链接生成器</a>，获取方式选择ProductId，通道选择Fast，搜索框中填入9P3395VX91NR</p>
-<p>在下面加载出的文件列表中, 找到名称为如下格式的文件, 下载版本最新的那个, 大约 1.37GB</p>
-<p><strong>MicrosoftCorporationII.WindowsSubsystemForAndroid_x.x.x.x_neutral_~_8wekyb3d8bbwe.msixbundle</strong></p>
-<p>等待浏览器下载完成后安装</p>
-<h3 id="使用WSAToolBox管理WSA"><a href="#使用WSAToolBox管理WSA" class="headerlink" title="使用WSAToolBox管理WSA"></a>使用WSAToolBox管理WSA</h3><p>使用微软应用商店下载WSAToolBox —-&gt; <a href="https://apps.microsoft.com/detail/9ppsp2mkvtgt?ocid=libraryshare&hl=zh-cn&gl=US">传送门</a></p>
-<p>工具箱中的内容自己摸索一下，然后。。。这篇文章就结束啦</p>
-]]></content>
-      <categories>
-        <category>Windows子系统</category>
       </categories>
   </entry>
 </search>
