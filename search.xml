@@ -703,6 +703,166 @@
       </categories>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2025/01/11/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>手把手教你使用MCSM搭建Minecraft远程管理面板</title>
+    <url>/2025/02/27/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%BD%BF%E7%94%A8MCSM%E6%90%AD%E5%BB%BAMinecraft%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF/</url>
+    <content><![CDATA[<h2 id="一、MCSManager-安装"><a href="#一、MCSManager-安装" class="headerlink" title="一、MCSManager 安装"></a>一、MCSManager 安装</h2><h3 id="1-Windows-系统"><a href="#1-Windows-系统" class="headerlink" title="1. Windows 系统"></a>1. Windows 系统</h3><ol>
+<li>从<a href="https://mcsmanager.com/">官网</a>下载 Windows 版安装包并解压。</li>
+<li>双击 <code>运行.bat</code> 启动面板，访问 <code>http://服务器IP:23333</code>，使用创建默认账号(管理员)</li>
+</ol>
+<h3 id="2-Linux-系统"><a href="#2-Linux-系统" class="headerlink" title="2. Linux 系统"></a>2. Linux 系统</h3><p>一键安装脚本（推荐）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> su -c <span class="string">&quot;wget -qO- https://script.mcsmanager.com/setup_cn.sh | bash&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>安装后访问 <code>http://服务器IP:23333</code>，使用创建默认账号(管理员)</p>
+<hr>
+<h2 id="二、创建-Minecraft-服务器"><a href="#二、创建-Minecraft-服务器" class="headerlink" title="二、创建 Minecraft 服务器"></a>二、创建 Minecraft 服务器</h2><ol>
+<li><p><strong>新建实例</strong><br>面板中点击「应用实例」→「新建应用」→ 选择「Minecraft Java 版」</p>
+</li>
+<li><p><strong>上传服务端核心或使用实例模板创建</strong><br>例如上传 <code>Paper-1.21.jar</code>，配置启动命令：</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line">java -jar Paper-1.21.jar nogui</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>修改配置文件</strong></p>
+<ul>
+<li>在文件管理器中编辑 <code>eula.txt</code>，将 <code>eula=false</code> 改为 <code>eula=true</code>。</li>
+<li>修改 <code>server.properties</code> 中的 <code>server-port=25565</code>（默认端口）。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="三、使用-OpenFrp-实现内网穿透"><a href="#三、使用-OpenFrp-实现内网穿透" class="headerlink" title="三、使用 OpenFrp 实现内网穿透"></a>三、使用 OpenFrp 实现内网穿透</h2><blockquote>
+<p>如果你的服务器拥有公网IP，请跳过这一段</p>
+</blockquote>
+<h3 id="1-注册与配置-OpenFrp"><a href="#1-注册与配置-OpenFrp" class="headerlink" title="1. 注册与配置 OpenFrp"></a>1. 注册与配置 OpenFrp</h3><ol>
+<li><strong>注册账号</strong><br>访问 <a href="https://console.openfrp.net/">OpenFrp 官网</a>，完成注册并登录。</li>
+<li><strong>创建隧道</strong><ul>
+<li>进入「隧道管理」→「创建隧道」。</li>
+<li>选择 <strong>HTTP 协议</strong>，填写以下参数：<ul>
+<li><strong>本地IP</strong>：<code>127.0.0.1</code>（若穿透 MCSManager 面板，本地端口填 <code>23333</code>；若穿透 MC 服务器，填 <code>25565</code>）</li>
+<li><strong>本地端口</strong>：根据需求选择（见下表）。</li>
+<li><strong>远程端口</strong>：自动分配或手动指定（需实名认证）。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">穿透目标</th>
+<th align="left">本地端口</th>
+<th align="left">协议类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">MCSManager 面板</td>
+<td align="left">23333</td>
+<td align="left">HTTP</td>
+</tr>
+<tr>
+<td align="left">Minecraft 服务器</td>
+<td align="left">25565</td>
+<td align="left">TCP</td>
+</tr>
+</tbody></table>
+<ol>
+<li><strong>获取连接信息</strong><br>创建成功后，记录「隧道ID」「访问密钥」和「节点地址」（如 <code>frp.openfrp.top:12345</code>）。</li>
+</ol>
+<hr>
+<h3 id="2-Windows-系统穿透步骤"><a href="#2-Windows-系统穿透步骤" class="headerlink" title="2. Windows 系统穿透步骤"></a>2. Windows 系统穿透步骤</h3><ol>
+<li><p><strong>下载客户端</strong><br>从 <a href="https://console.openfrp.net/download">OpenFrp 软件下载页</a> 获取 Windows 版客户端。</p>
+</li>
+<li><p><strong>配置隧道</strong></p>
+<p>根据官方文档创建隧道</p>
+</li>
+<li><p><strong>启动隧道</strong></p>
+<p>在启动器中找到对应的隧道启动即可~</p>
+</li>
+</ol>
+<hr>
+<h3 id="3-Linux-系统穿透步骤"><a href="#3-Linux-系统穿透步骤" class="headerlink" title="3. Linux 系统穿透步骤"></a>3. Linux 系统穿透步骤</h3><p>由于Linux配置过于复杂，请自行参照<a href="https://openfrp.wiki/">官方文档</a>进行配置</p>
+<hr>
+<h2 id="四、远程连接与测试"><a href="#四、远程连接与测试" class="headerlink" title="四、远程连接与测试"></a>四、远程连接与测试</h2><ol>
+<li><strong>访问 MCSManager 面板</strong><br>浏览器输入 <code>http://节点地址:远程端口</code>（例如 <code>http://frp.openfrp.top:54321</code>）。</li>
+<li><strong>连接 Minecraft 服务器</strong><ul>
+<li>在 Minecraft 多人游戏中输入 <code>节点地址:远程端口</code>（例如 <code>frp.openfrp.top:25565</code>）。</li>
+</ul>
+</li>
+<li><strong>验证穿透状态</strong><br>在 OpenFrp 控制台的「隧道列表」中查看实时流量状态。</li>
+</ol>
+<hr>
+<h2 id="五、安全注意事项"><a href="#五、安全注意事项" class="headerlink" title="五、安全注意事项"></a>五、安全注意事项</h2><ol>
+<li><p><strong>密码安全</strong></p>
+<ul>
+<li>不要将面板管理员告知他人</li>
+<li>OpenFrp 访问密钥定期更新(没必要)</li>
+</ul>
+</li>
+<li><p><strong>隧道隔离</strong><br>建议为面板和游戏服务器创建独立隧道，避免共用端口</p>
+</li>
+<li><p><strong>Docker</strong></p>
+<p>使用Docker容器隔开每个实例(如需要用于商业用途)</p>
+</li>
+</ol>
+<hr>
+<h2 id="六、常见问题"><a href="#六、常见问题" class="headerlink" title="六、常见问题"></a>六、常见问题</h2><table>
+<thead>
+<tr>
+<th align="left">问题</th>
+<th align="left">解决方案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">隧道连接失败</td>
+<td align="left">检查本地服务是否运行（如 MCSManager 或 MC 服务器是否启动）</td>
+</tr>
+<tr>
+<td align="left">远程访问延迟高</td>
+<td align="left">更换 OpenFrp 节点（推荐选择地理距离近的节点）</td>
+</tr>
+<tr>
+<td align="left">OpenFrp 客户端报错「auth failed」</td>
+<td align="left">确认访问密钥填写正确，或重新生成密钥</td>
+</tr>
+<tr>
+<td align="left">Minecraft 无法连接</td>
+<td align="left">检查 <code>server.properties</code> 中 <code>online-mode</code> 是否为 <code>false</code>（允许非正版用户）</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="扩展资源"><a href="#扩展资源" class="headerlink" title="扩展资源"></a>扩展资源</h2><ul>
+<li><strong>MCSManager 官方文档</strong>：<a href="https://docs.mcsmanager.com/">https://docs.mcsmanager.com</a></li>
+<li><strong>OpenFrp 帮助中心</strong>：<a href="https://openfrp.wiki/">https://openfrp.wiki</a></li>
+<li><strong>Minecraft 服务端配置指南</strong>：<a href="https://minecraft.fandom.com/wiki/Server.properties">https://minecraft.fandom.com/wiki/Server.properties</a></li>
+</ul>
+<hr>
+<p><strong>提示</strong>：</p>
+<ul>
+<li>OpenFrp 免费版提供基础穿透服务，若需更高带宽或固定域名，可升级至付费套餐</li>
+<li>生产环境建议搭配 Docker 部署，提升安全性和稳定性</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Minecraft</category>
+      </categories>
+  </entry>
+  <entry>
     <title>教你搭建自己的Minecraft(Java版)服务器</title>
     <url>/2025/01/31/%E6%95%99%E4%BD%A0%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84Minecraft-Java%E7%89%88-%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
     <content><![CDATA[<blockquote>
@@ -809,23 +969,5 @@
       <categories>
         <category>Windows子系统</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2024/11/23/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
 </search>
